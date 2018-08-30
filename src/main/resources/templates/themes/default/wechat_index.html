@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ho拍照上传</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body ontouchstart="">
+
+    <div class="wxapi_container">
+        <div class="lbox_close wxapi_form">
+        <h3 id="menu-image">图像接口</h3>
+        <div th:text="'url is ' + ${cururl}"></div>
+        <div th:text="'surl is ' + ${signurl}"></div>
+
+        <hr/>
+        <span class="desc">拍照或从手机相册中选图接口</span>
+        <button class="btn btn_primary" id="chooseImage">chooseImage</button>
+        <br/>
+
+        <div id="prev_img">
+
+        </div>
+        <br/>
+
+        <span class="desc">上传图片接口</span>
+        <button class="btn btn_primary" id="uploadImage">uploadImage</button>
+        </div>
+
+        <span class="desc">关闭当前网页窗口接口</span>
+        <button class="btn btn_primary" id="closeWindow">closeWindow</button>
+
+    </div>
+
+</body>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script th:inline="javascript">
+    wx.config({
+
+        debug: false,
+        appId: [[${appid}]],
+        timestamp: [[${timestamp}]],
+        nonceStr: [[${nonce}]],
+        signature: [[${sign}]],
+
+        jsApiList: [
+            'playVoice',
+            'onVoicePlayEnd',
+            'pauseVoice',
+            'stopVoice',
+            'uploadVoice',
+            'downloadVoice',
+            'chooseImage',
+            'previewImage',
+            'uploadImage',
+            'downloadImage'
+        ]
+    });
+</script>
+<script src="js/zepto.min.js"></script>
+<script src="js/demo.js"> </script>
+</html>

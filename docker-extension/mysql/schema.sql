@@ -1,20 +1,20 @@
 
 -- 创建数据库
-create database `tale` default character set utf8 collate utf8_general_ci;
+CREATE DATABASE `tale` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-use tale;
+USE tale;
 
 DROP TABLE IF EXISTS `t_logs`;
 
 CREATE TABLE `t_logs` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT ,
-  `action` varchar(100) DEFAULT NULL ,
-  `data` varchar(2000) DEFAULT NULL ,
-  `author_id` int(10) DEFAULT NULL ,
-  `ip` varchar(20) DEFAULT NULL ,
-  `created` int(10) DEFAULT NULL ,
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `action` VARCHAR(100) DEFAULT NULL ,
+  `data` VARCHAR(2000) DEFAULT NULL ,
+  `author_id` INT(10) DEFAULT NULL ,
+  `ip` VARCHAR(20) DEFAULT NULL ,
+  `created` INT(10) DEFAULT NULL ,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `t_attach`;
 
@@ -102,7 +102,7 @@ LOCK TABLES `t_metas` WRITE;
 INSERT INTO `t_metas` (`mid`, `name`, `slug`, `type`, `description`, `sort`, `parent`)
 VALUES
 	(1,'default',NULL,'category',NULL,0,0),
-	(6,'my github','https://github.com/ZHENFENG13','link',NULL,0,0);
+	(6,'my github','https://github.com/kawloong','link',NULL,0,0);
 
 UNLOCK TABLES;
 
@@ -167,4 +167,4 @@ CREATE TABLE `t_users` (
 
 INSERT INTO `t_users` (`uid`, `username`, `password`, `email`, `home_url`, `screen_name`, `created`, `activated`, `logged`, `group_name`)
 VALUES
-	(1, 'admin', 'a66abb5684c45962d887564f08346e8d', '1034683568@qq.com', NULL, 'admin', 1490756162, 0, 0, 'visitor');
+	(1, 'admin', 'a66abb5684c45962d887564f08346e8d', '79600545@qq.com', NULL, 'admin', 1530756162, 0, 0, 'visitor');

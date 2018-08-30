@@ -32,6 +32,13 @@ public class RestResponseBo<T> {
      */
     private long timestamp;
 
+    private String Myname = "costomTest";
+
+    public String getMyname() {
+        return Myname;
+    }
+
+
     public RestResponseBo() {
         this.timestamp = System.currentTimeMillis() / 1000;
     }
